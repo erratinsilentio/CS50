@@ -62,7 +62,6 @@ int main(void)
     printf("\n");
 
     // make second array
-
     printf("second half of numbers: \n");
 
     power = 1;
