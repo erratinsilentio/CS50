@@ -1,4 +1,3 @@
-#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -28,7 +27,8 @@ int main(int argc, string argv[])
     // Check for invalid usage
     if (argc < 2)
     {
-        printf("Usage: plurality [candidate ...]\n");
+        
+      printf("Usage: plurality [candidate ...]\n");
         return 1;
     }
 
@@ -44,19 +44,24 @@ int main(int argc, string argv[])
         candidates[i].name = argv[i + 1];
         candidates[i].votes = 0;
     }
-
-    int voter_count = get_int("Number of voters: ");
-
+    printf("Number of voters: ")
+    int voter_count;
+    scanf("%i", &voter_count);
+    
     // Loop over all voters
     for (int i = 0; i < voter_count; i++)
     {
-        string name = get_string("Vote: ");
+        printf("Vote: ");
+        string candidate_name;
+        scanf("%s", &candidate_name);
 
         // Check for invalid vote
         if (!vote(name))
         {
             printf("Invalid vote.\n");
         }
+
+        vote(name);
     }
 
     // Display winner of election
@@ -66,7 +71,14 @@ int main(int argc, string argv[])
 // Update vote totals given a new vote
 bool vote(string name)
 {
-    // TODO
+    // jeśli imie kandydata z tablicyu jest takie samo jak podane, to dodaj jeden glos
+    for(int i = 0; i< candidate_count; i++)
+    {
+        if(candidates[i].name == name){
+            candidates[i].votes++;
+            return true;
+        }
+    }
     return false;
 }
 
