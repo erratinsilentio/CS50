@@ -1,3 +1,4 @@
+#include <cs50.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -44,7 +45,7 @@ int main(int argc, string argv[])
         candidates[i].name = argv[i + 1];
         candidates[i].votes = 0;
     }
-    printf("Number of voters: ")
+    printf("Number of voters: ");
     int voter_count;
     scanf("%i", &voter_count);
     
