@@ -6,6 +6,7 @@
 #define MAX 9
 
 // Candidates have name and vote count
+// change all strings to char[];
 typedef struct
 {
     string name;
