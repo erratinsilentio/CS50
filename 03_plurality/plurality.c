@@ -7,6 +7,7 @@
 
 // Candidates have name and vote count
 // change all strings to char[];
+// rewrite without use of cs50 library 
 typedef struct
 {
     string name;
